@@ -6,12 +6,17 @@ const Weather = () => {
   const [weather, setWeather] = useState('')
 
   const getWeather = async () => {
-    const API_KEY = '72172337bebaf120e6b05ac6a228d8de'
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&unit=metric`
-    )
-    const data = await response.json()
-    setWeather(data)
+    try {
+      const API_KEY = '72172337bebaf120e6b05ac6a228d8de'
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&unit=metric`
+      )
+      const data = await response.json()
+      setWeather(data)
+    } catch (error) {
+      alert(error.message)
+      setWeather(null)
+    }
   }
 
   return (
