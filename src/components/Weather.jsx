@@ -22,7 +22,7 @@ const Weather = () => {
         onChange={(e) => setCity(e.target.value)}
         placeholder='Choose your city'
       />
-      <button onClick={getweather}>Get Weather</button>
+      <button onClick={getWeather}>Get Weather</button>
       {weather && (
         <div>
           <h2>{weather.name}</h2>
