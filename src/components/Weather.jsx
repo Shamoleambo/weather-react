@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Weather.css'
 
 const Weather = () => {
   const [city, setCity] = useState('')
@@ -14,7 +15,7 @@ const Weather = () => {
   }
 
   return (
-    <div>
+    <div className='weather-container'>
       <h1>Weather App</h1>
       <input
         type='text'
@@ -24,7 +25,7 @@ const Weather = () => {
       />
       <button onClick={getWeather}>Get Weather</button>
       {weather && (
-        <div>
+        <div className='weather-info'>
           <h2>{weather.name}</h2>
           <p>Temperature: {weather.main.temp}</p>
           <p>Condition: {weather.weather[0].description}</p>
